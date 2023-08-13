@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- Функция для открытия модального окна -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: turquoise;
+            font-family: 'Bungee Spice', cursive;
+            font-family: 'Mynerve', cursive;
+            font-size: 24px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            width: 400px;
+            height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        // Функция для открытия модального окна
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        // Функция для закрытия модального окна
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Кнопка для открытия модального окна -->
+    <button onclick="openModal()">Открыть модальное окно</button>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Модальное окно</h2>
+            <p>Пример содержимого модального окна.</p>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+</body>
+
+</html>
